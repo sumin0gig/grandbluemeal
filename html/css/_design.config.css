@@ -1,0 +1,330 @@
+@charset "utf-8";
+/***************************************************************
+	Design Manager Setting Style: 자동생성 CSS
+---------------------------------------------------------------
+	- 최종 수정일 : 2024-02-05 19:20:28
+***************************************************************/
+
+
+
+
+@media all and (min-width: 1025px) { 
+	html.single:before	{
+		}
+}
+
+@media all and (max-width: 1024px) {
+	html.single:before	{
+		background-image: none;
+		}
+}
+
+
+@media all and (min-width: 1025px) { 
+	#header	{
+		}
+
+	#gnb	{
+		}
+
+	#gnb_control_box	{ display: none; }
+}
+
+@media all and (max-width: 1024px) {
+
+	#header	{
+		}
+
+	#gnb	{
+		}
+
+	#gnb_control_box	{
+	display: block;
+	}
+}
+
+
+
+
+/*#gnb	{ float: right; }*/
+#gnb,
+#gnb *	{
+	color: ;
+	font-size: px;
+}
+#gnb a:hover {
+	color: ;
+	font-size: px;
+}
+
+
+
+
+
+
+
+
+
+
+.ui-btn	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+.ui-btn:hover	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+
+.ui-btn.point	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+.ui-btn.point:hover	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+
+.ui-btn.etc	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+.ui-btn.etc:hover	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+.swiper-pagination-bullet-active {background:	;}
+
+
+.pg_wrap .pg_page	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+.pg_wrap .pg_page:hover	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+
+.pg_wrap .pg_current,
+.pg_wrap .pg_current:hover	{
+	color:	;
+	background:	;
+	border-color:	;
+}
+
+
+
+
+
+.bar-equalizer i	{
+}
+
+
+
+.status-bar dd p	{
+	background: ;
+}
+.status-bar dd p span	{
+	background: ;
+	opacity: .5;
+}
+.status-bar dd p sup	{
+	background: ;
+}
+.status-bar dd p i	{
+	color: ;
+}
+
+
+
+hr.line	{
+	background: ;
+}
+
+
+
+
+.form-input,
+input[type="file"],
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select	{
+	color:	;
+	background:	;
+	border-color:	;
+	
+				}
+
+::-webkit-input-placeholder {
+	color: ;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: ;
+	opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: ;
+	opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: ;
+}
+
+
+*::-webkit-input-placeholder	{ color:#000; } 
+textarea:-moz-placeholder, input:-moz-placeholder	{ color:#000; }
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color:  !important;
+  color: ;
+}
+
+
+
+
+.flex-control-paging a	{ background: ; }
+.flex-control-paging a.flex-active	{ background: ; }
+
+
+
+
+.theme-box	{
+				}
+.theme-box.no-link a	{
+}
+
+
+
+.inven-popup-viewer {
+}
+
+
+
+
+.timeline-Tweet:before { border-top-color: ; }
+.TweetAuthor-name	{ color: ; }
+
+
+
+
+#submenu	{
+	background-color:	;
+	color:	;
+}
+#submenu a	{
+	color: ;
+}
+#submenu a:hover	{
+	color: ;
+}
+
+
+
+
+.theme-list,
+.theme-form	{
+	background-color:	;
+	color:	;
+}
+
+/*** Form Area ***/
+.theme-form th	{
+	background-color:	;
+	color:	;
+}
+.theme-form td	{
+	background-color:	;
+	color:	;
+}
+
+/*** List Area ***/
+.theme-list th	{
+	background-color:	;
+	color:	;
+}
+.theme-list td	{
+	background-color:	;
+	color:	;
+}
+
+
+
+
+#tab_list { border-color: ; }
+
+
+
+
+.inventory-list a {
+	/*border: 1px solid ;*/
+
+	border: 1px solid ;
+}
+.inventory-list a i	{
+	/*
+	background: ;
+	color: ;
+	*/
+
+	border: 1px solid ;
+	background: rgba(0, 0, 0, .7);
+	color: #fff;
+}
+
+
+
+
+
+#load_log_board	{
+	}
+
+.board-notice	{
+	}
+
+#log_list	{
+	}
+#log_list .item	{
+	
+	}
+
+#log_list .item .item-inner .ui-pic	{
+	}
+
+
+#log_list .item .item-inner .item-comment	{
+		}
+
+
+#log_list .item .item-inner	.ui-comment	{
+	
+	}
+
+
+#log_list .item .item-inner .co-header p,
+#log_list .item .item-inner .co-header p a	{
+		}
+
+#log_list .item .item-inner .co-header p.owner,
+#log_list .item .item-inner .co-header p.owner a	{
+		}
+
+#log_list .item .item-inner .co-footer .date	{
+		}
+#log_list .item .item-inner .co-content .other-site-link	{
+	}
+#log_list .item .item-inner .co-content .link_hash_tag	{
+	}
+#log_list .item .item-inner .co-content .log_link_tag	{
+	}
+#log_list .item .item-inner .co-content .member_call	{
+	}
