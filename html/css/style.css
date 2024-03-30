@@ -221,7 +221,7 @@ html.single .bgm-player {display:none !important;}
 .bgm-player {text-align:center; width: fit-content;}
 .bgm-player .title {display:inline-block; vertical-align:middle; line-height:30px; font-size:13px;}
 .bgm-player ul {display:inline-block; vertical-align:middle; margin-left:10px;}
-.bar-equalizer {display:inline-block; vertical-align:middle; position:relative; width:90px; height:25px; margin:0 auto; overflow:hidden; text-align:center; box-sizing:border-box; margin-left:15px;}
+.bar-equalizer {display:inline-block; vertical-align:middle; position:relative; width:0; height:25px; margin:0 auto; overflow:hidden; text-align:center; box-sizing:border-box; margin-left:15px;}
 .bar-equalizer i {display:block; float:left; width:1px; margin-right:2px; border-radius:5px; margin-top:15px; transform:translateY(-50%); transition:height 0.3s linear; -webkit-transition:height 0.3s linear;}
 .bgm-player li {display:inline-block;}
 .bgm-player li a {display:block; position:relative; width:20px; height:100%; line-height:27px; text-align:left; text-indent:-999px; overflow:hidden;}

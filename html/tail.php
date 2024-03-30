@@ -17,7 +17,7 @@ if(defined('G5_THEME_PATH')) {
 </a>
 <script>
 $('#goto_top').click(function () {
-	$('body,html').animate({
+	$('.fix-layout').animate({
 		scrollTop: 0
 	}, 800);
 	return false;

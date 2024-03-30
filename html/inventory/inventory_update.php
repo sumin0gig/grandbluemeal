@@ -36,6 +36,7 @@ if($in['in_id'] && $re_ch['ch_id']) {
 						se_ch_name = '{$se_ch['ch_name']}',
 						re_ch_id = '{$re_ch['ch_id']}',
 						re_ch_name = '{$re_ch['ch_name']}',
+						in_is_new = 1,
 						in_memo = '{$in_memo}'
 						{$add_sql}
 					where in_id = '{$in_id}'";

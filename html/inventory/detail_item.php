@@ -6,6 +6,10 @@ $ch = get_character($in['ch_id']);
 
 $is_mine = $ch['mb_id'] == $character['mb_id'] ? true : false;
 
+if ($is_mine) {
+	sql_query(" update {$g5['inventory_table']} SET in_is_new = 0 WHERE in_id = '{$in['in_id']}' ");
+}
+
 if(!$in['in_id']) { 
 	echo "<p>아이템 보유 정보를 확인할 수 없습니다.</p>";
 } else {

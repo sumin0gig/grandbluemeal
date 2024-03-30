@@ -3,7 +3,7 @@
 	<div class="bar-equalizer">
 		<?
 			// 이퀄라이저 바 개수
-			$equal_count = 30;
+			$equal_count = 0;
 			while($equal_count > 0) { echo "<i></i>"; $equal_count--; } 
 		?>
 	</div>

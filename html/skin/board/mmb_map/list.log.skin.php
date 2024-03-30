@@ -92,7 +92,18 @@ if($is_viewer) {
 sql_query("update {$g5['call_table']} set bc_check = 1 where re_mb_id = '{$member['mb_id']}' and bo_table ='{$bo_table}' and wr_id = '{$list_item['wr_id']}'");
 ?>
 
+
 <div class="item <?=$h_class?>" id="log_<?=$list_item['wr_id']?>">
+	<div class="ui-pic">	
+		<div class="pic-header">
+		<? if($is_viewer) { 
+			// 보기 권한이 존재 할 경우 (멤버의 경우)
+			// -- 버튼 영역 출력?>
+			<a href="?bo_table=<?=$bo_table?>&log=<?=$list_item['wr_num'] * -1?>&single=Y" target="_blank" class="new">로그링크</a>
+			<? if($is_member)		{ ?><a href="#" data-idx='<?=$list_item['wr_id']?>' data-function="favorite" class="fav <?=$is_favorite ? "on" : ""?>">관심</a><? } ?>
+		<? } ?>
+		</div>	
+	</div>	
 	<div class="item-inner">
 	<!--  로그 코멘트 출력 부분 -->
 		<div class="ui-comment">
