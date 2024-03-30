@@ -67,7 +67,7 @@
 .list_todo li.complete:after {content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background: url('./complete.png') center center/100% no-repeat;}
 .list_todo li.complete .btn_manage {opacity: 1; z-index: 2;}
 
-.list_dic {display: flex; flex-wrap: wrap; gap: 15px 1.5%; padding: 20px 0; font-family: 'Pretendard'; cursor: pointer;}
+.list_dic {display: flex; flex-wrap: wrap; gap: 15px 1.5%; padding: 20px 0; font-family: 'Pretendard';}
 .list_dic * {box-sizing: border-box;}
 .list_dic li {
     overflow: hidden;
@@ -134,6 +134,7 @@ span.required::after {content: '*'; color: #ff4747;}
 
 @media (max-width:768px) {
     .list_todo li {width: 49.25%;}
+    .list_dic li {width: 49.25%;}
     .list_todo .thumb_img .thumb_img_wrap {height: 20.5vw; max-height: 157px;}
 }
 
@@ -145,5 +146,6 @@ span.required::after {content: '*'; color: #ff4747;}
 
 @media (max-width:420px) {
     .list_todo li {width: 100%;}
+    .list_dic li {width: 100%;}
     .list_todo .thumb_img .thumb_img_wrap {height: 40vw;}
 }

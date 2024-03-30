@@ -69,7 +69,7 @@ input[type="radio"]:checked + label {
 
 #map_content { display: flex; }
 
-#log_list						{ padding:1rem; overflow: scroll; height: 100%;} 
+#log_list						{ padding:1rem; overflow: initial; height: 100%;} 
 
 #log_list .empty_list			{ text-align: center; line-height: 100px; }
 

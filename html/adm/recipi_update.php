@@ -52,6 +52,7 @@ if($re['cnt'] > 0)
 
 sql_query ("insert into {$g5['recepi_table']}
 				set re_item_order	 ='{$re_item_order}',
+					re_dic_cate = '{$re_dic_cate}',
 					it_id = '{$it_id}',
 					re_use = '{$re_use}',
 					dic_show = '{$dic_show}'

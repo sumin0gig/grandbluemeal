@@ -53,37 +53,32 @@ if($logo_data)	$logo_data.= " />";
 			} else { 
 			?>
 			
-				<ul id="no_design_gnb">
-					<li>
-						<a href="<?=G5_URL?>/member">
-							멤버목록
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_URL?>/member/ready.php">
-							신청자목록
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_URL?>/couple">
-							커플목록
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_URL?>/shop">
-							상점
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_URL?>/mypage">
-							마이페이지
-						</a>
-					</li>
-					<li>
-						<a href="<?=G5_BBS_URL?>/current_connect.php">
-							현재접속자
-						</a>
-					</li>
+			<ul class="h_menu_ul">
+				
+				<li onClick="location.href='<?=G5_URL?>'" >
+				<a class="menu_img"> <i class="fas fa-home"></i> Main</a>
+				</li>
+
+				<li onClick="location.href='<?=G5_URL?>/member'">
+				<a class="menu_img" > <i class="fas fa-heart"></i> MEMBER</a>
+				</li>
+
+				<li onClick="location.href='<?=G5_URL?>/bbs/board.php?bo_table=mmb'">
+				<a class="menu_img" > <i class="fas fa-clipboard"></i> MAP</a>
+				</li>
+
+				<li onClick="location.href='<?=G5_URL?>/bbs/board.php?bo_table=todo'">
+				<a class="menu_img" > <i class="fas fa-clipboard"></i> RECIPI BOOK</a>
+				</li>
+
+				<li onClick="location.href='<?=G5_URL?>/bbs/board.php?bo_table=cook'">
+				<a class="menu_img" > <i class="fas fa-clipboard"></i> COOK </a>
+				</li>
+
+				<li onClick="location.href='<?=G5_URL?>/shop/?br=음식'">
+				<a class="menu_img" > <i class="fas fa-clipboard"></i> SHOP</a>
+				</li>
+
 				</ul>
 				<? include(G5_PATH."/templete/txt.bgm.php"); ?>
 

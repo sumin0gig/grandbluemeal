@@ -27,6 +27,25 @@ $owner_behind = $owner_behind['cs_etc_3'];
 <div id="load_log_board">
 
 
+<!-- status -->
+<?= $character['ch_name'] ?>
+<img src="<?= $character['ch_thumb'] ?>"/>
+<?
+  $hp = get_status_by_name($character['ch_id'], '체력');
+  $str = get_status_by_name($character['ch_id'], '힘');
+  $mp = get_status_by_name($character['ch_id'], '마력');
+  $dir = get_status_by_name($character['ch_id'], '관찰력');
+?>
+ <div> 체력 <?= $hp['now'] ?> / <?= $hp['has'] ?>  </div>
+ <div> 힘 <?= $str['now'] ?> / <?= $str['has'] ?>  </div>
+ <div> 마력 <?= $mp['now'] ?> / <?= $mp['has'] ?>  </div>
+ <div> 관찰력 <?= $dir['now'] ?> / <?= $dir['has'] ?>  </div>
+
+<!-- status -->
+
+<!-- now location -->
+<?= get_map_name($character['ma_id']) ?>
+<!-- now location -->
 
 <!-- 자비란 상단 공지 부분 -->
 <? if($board['bo_content_head']) { ?>

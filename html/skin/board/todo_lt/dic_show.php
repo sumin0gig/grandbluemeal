@@ -77,15 +77,22 @@ if($ca_name == "레시피") {
         <? if($ca_name == "레시피") { ?>
           <div class="item_recipe"> 
             <div>
-              <?php foreach ($re_item as $item) {
-                echo "<div>";
-                $img_url =  $row['dic_show'] == true ? get_item_img($item) : 'wer.png' ;
-                if ($img_url) {
-                  echo "<img src='" . $img_url . "' style='width: 30px;' />";
+              <?php if($row['dic_show'] == true){
+                foreach ($re_item as $item) {
+                  echo "<div>";
+                  $img_url =  $row['dic_show'] == true ? get_item_img($item) : 'wer.png' ;
+                  if ($img_url) {
+                    echo "<img src='" . $img_url . "' style='width: 30px;' />";
+                  }
+                  echo get_item_name($item);
+                  echo "</div>";
                 }
-                echo get_item_name($item);
-                echo "</div>";
-              } ?>
+              }else{ ?>
+                <div> ??? </div>
+                <div> ??? </div>
+                <div> ??? </div>
+              <? }
+              ?>
             </div> 
           </div>
         <? } ?>

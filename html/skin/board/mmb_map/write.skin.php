@@ -1,14 +1,3 @@
-<?
-/******************************************************
-	위치이동 커맨드 추가 : 지도 표시 부분. 불필요할 시 제거
-******************************************************/	
-if($config['cf_use_map']) {
-	include_once($board_skin_path.'/list.top.map.skin.php');
-}
-/******************************************************
-	위치이동 커맨드 추가 종료
-******************************************************/	
-?>
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
@@ -186,7 +175,6 @@ if(!$is_error) {
 				</dd>
 			</dl>
 			
-			<div class="theme-box">
 			<?php if ($is_category) { ?>
 				<ul id="board_category">
 					<?php echo $category_option ?>
@@ -222,28 +210,7 @@ if(!$is_error) {
 					******************************************************/	
 						if($config['cf_use_map']) { 
 					?>
-					<div class="comment-data" id="action_MAP">
-					<?
-						// 위치 이동 커멘드 관련
-						// 현재 위치에서 이동이 가능한 칸만 가져온다
-						$map = sql_fetch("select * from {$g5['map_table']} where ma_id = '{$character['ma_id']}'");
-						$able_sql = "select * from {$g5['map_move_table']} where mf_start = '{$character['ma_id']}' and mf_use = '1'";
-						$map_able = sql_query($able_sql);
-					?>
-						<dl>
-							<dt>위치이동</dt>
-							<dd>
-								<select name="re_ma_id" id="re_ma_id" >
-									<option value="<?=$character['ma_id']?>">[현재위치 유지] <?=$map['ma_name']?></option>
-								<? for($i=0; $mable = sql_fetch_array($map_able); $i++) { 
-									$end_map = sql_fetch("select ma_name from {$g5['map_table']} where ma_id = '{$mable['mf_end']}'");
-								?>
-									<option value="<?=$mable['mf_end']?>">[위치이동] <?=$map['ma_name']?> ▶ <?=$end_map['ma_name']?></option>
-								<? } ?>
-								<select>
-							</dd>
-						</dl>
-					</div>
+						<input type="hidden" name="re_ma_id" id="re_ma_id"/>
 					<? }
 					/******************************************************
 								위치이동 커맨드 추가 종료
@@ -302,11 +269,11 @@ if(!$is_error) {
 					<?php } ?>
 					
 				</div>
-			</div>
 			
 			<hr class="padding small" />
 
 			<div class="comments">
+			<p class="ui-btn help">해시태그 : #해시태그내용 / 로그링크 : @로그번호 / 멤버알람 : [[닉네임]]</p>
 				<?php if($write_min || $write_max) { ?>
 				<!-- 최소/최대 글자 수 사용 시 -->
 				<p id="char_count_desc">이 게시판은 최소 <strong><?php echo $write_min; ?></strong>글자 이상, 최대 <strong><?php echo $write_max; ?></strong>글자 이하까지 글을 쓰실 수 있습니다.</p>
@@ -316,14 +283,25 @@ if(!$is_error) {
 				<!-- 최소/최대 글자 수 사용 시 -->
 				<div id="char_count_wrap"><span id="char_count"></span>글자</div>
 				<?php } ?>
-				<p class="ui-btn help">해시태그 : #해시태그내용 / 로그링크 : @로그번호 / 멤버알람 : [[닉네임]]</p>
 			</div>
 			
+			<?
+			/******************************************************
+				위치이동 커맨드 추가 : 지도 표시 부분. 불필요할 시 제거
+			******************************************************/	
+			if($config['cf_use_map']) {
+				include_once($board_skin_path.'/list.top.map.skin.php');
+			}
+			/******************************************************
+				위치이동 커맨드 추가 종료
+			******************************************************/	
+			?>
+
 			<hr class="padding" />
 
 			<div class="txt-center">
-				<button type="submit" id="btn_submit" accesskey="s" class="ui-btn">COMMENT</button>
-				<button type="button" onclick="location.href='./board.php?bo_table=<?=$bo_table?>';" class="ui-btn">LIST</button>
+				<button type="submit" style="display:none;" id="btn_submit" accesskey="s" class="ui-btn">COMMENT</button>
+				<button type="button" onclick="location.href='./board.php?bo_table=<?=$bo_table?>';" class="ui-btn">취소</button>
 			</div>
 			</form>
 
@@ -339,13 +317,6 @@ if(!$is_error) {
 	// 글자수 제한
 	var char_min = parseInt(<?php echo $write_min; ?>); // 최소
 	var char_max = parseInt(<?php echo $write_max; ?>); // 최대
-	check_byte("wr_content", "char_count");
-
-	$(function() {
-		$("#wr_content").on("keyup", function() {
-			check_byte("wr_content", "char_count");
-		});
-	});
 	<?php } ?>
 	function html_auto_br(obj)
 	{
@@ -395,20 +366,6 @@ if(!$is_error) {
 			else
 				f.wr_content.focus();
 			return false;
-		}
-
-		if (document.getElementById("char_count")) {
-			if (char_min > 0 || char_max > 0) {
-				var cnt = parseInt(check_byte("wr_content", "char_count"));
-				if (char_min > 0 && char_min > cnt) {
-					alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
-					return false;
-				}
-				else if (char_max > 0 && char_max < cnt) {
-					alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
-					return false;
-				}
-			}
 		}
 
 <? if($w == '') { ?>

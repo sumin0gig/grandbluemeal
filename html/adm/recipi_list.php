@@ -236,7 +236,7 @@ $frm_submit = '<div class="btn_confirm01 btn_confirm">
 			<tr>
 				<th scope="row"><label for="re_dic_cate">도감 분류</label></th>
 				<td>
-					<select name="re_dic_cate[<?php echo $i ?>]" id="re_dic_cate">
+					<select name="re_dic_cate" id="re_dic_cate">
 						<option value="요리">요리</option>
 						<option value="도구">도구</option>
 						<option value="기타">기타</option>

@@ -218,6 +218,11 @@ if($w != 'cu') {
 
 			$log = $action."||S||".$re['it_id']."||".$item['it_name']."||".$in_id."||".$re_item_order."||".count($team);
 
+			sql_query(" update {$g5['recepi_table']} 
+        set dic_show = '1'
+        where it_id = '{$re['it_id']}'
+			");
+
 		}
 
 		$customer_sql .= " , wr_log = '{$log}' ";

@@ -130,7 +130,7 @@ $colspan = 15;
 		<caption><?php echo $g5['title']; ?> 목록</caption>
 		<colgroup>
 			<col style="width: 40px;" />
-			<col style="width: 80px;" />
+			<col style="width: 60px;" />
 
 			<col style="width: 100px;" />
 			
@@ -138,7 +138,7 @@ $colspan = 15;
 			<col style="width: 60px;" />
 
 			<col style="width: 40px;"/>
-			<col />
+			<col style="width: 120px;"/>
 
 			<col style="width: 50px;"/>
 			<col style="width: 50px;"/>
@@ -146,9 +146,9 @@ $colspan = 15;
 			<col style="width: 50px;"/>
 			<col style="width: 50px;"/>
 
-			<col style="width: 100px;"/>
-			<col style="width: 100px;"/>
-			<col style="width: 100px;"/>
+			<col style="width: 60px;"/>
+			<col style="width: 60px;"/>
+			<col style="width: 60px;"/>
 
 			<col style="width: 40px;"/>
 			<col style="width: 50px;"/>

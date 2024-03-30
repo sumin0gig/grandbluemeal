@@ -11,6 +11,16 @@ $map_result = sql_query($map_sql);
 
 $map_w = 200;		// 지도 원본 가로 사이즈
 $map_h = 200;		// 지도 원본 세로 사이즈 크기
+
+// 위치 이동 커멘드 관련
+// 현재 위치에서 이동이 가능한 칸만 가져온다
+$able_sql = "select mf_end from {$g5['map_move_table']} where mf_start = '{$character['ma_id']}' and mf_use = '1'";
+$map_able_result = sql_query($able_sql);
+
+$map_able_ids = array();
+while ($row = sql_fetch_array($map_able_result)) {
+  $map_able_ids[] = $row['mf_end'];
+}
 ?>
 
 
@@ -31,8 +41,10 @@ $map_h = 200;		// 지도 원본 세로 사이즈 크기
 	if($map['ma_id'] == $character['ma_id']) { 
 		// 현재 캐릭터 위치와 동일한 좌표 영역일 경우
 		// my 클리스를 추가한다.
-		$map_class .=" my";
-	}
+		$map_class ="my";
+	} else if ( !in_array($map['ma_id'], $map_able_ids) ){
+    $map_class = "none";
+  }
 
 	// 현재 위치에 있는 캐릭터
 	// main 타입의 캐릭터들만 불러온다.
@@ -47,8 +59,16 @@ $map_h = 200;		// 지도 원본 세로 사이즈 크기
 	}
 
 ?>
-			<div class="pin <?=$map_class?>" style="top:<?=$pos_t?>%; left:<?=$pos_l?>%; width:<?=$pos_w?>%; height:<?=$pos_h?>%;"><span><?=$cnt?></span></div>
 
+	<div class="pin <?=$map_class?>" style="top:<?=$pos_t?>%; left:<?=$pos_l?>%; width:<?=$pos_w?>%; height:<?=$pos_h?>%;"
+    <? if ( in_array($map['ma_id'], $map_able_ids) ){
+    ?> onclick= submit_this(<?= $map['ma_id'] ?>)
+    <? }?>
+    >
+
+    <span><?=$cnt?></span>
+    <div class="map_name"><?=$map['ma_name']?></div>
+  </div>
 <? } ?>
 		</div>
 		<img src="https://i.imgur.com/le9utvs.png" alt="지도 이미지" />
@@ -68,10 +88,12 @@ $map_h = 200;		// 지도 원본 세로 사이즈 크기
 }
 #mmb_map_pannel .map-inner .pad			{ display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
 #mmb_map_pannel .map-inner > img		{ display: block; position: relative; z-index: 0; }
-#mmb_map_pannel .map-inner .pin			{ display: block; position: absolute; background: gray; cursor: pointer;}
-#mmb_map_pannel .map-inner .pin.my		{ background: rgba(172, 34, 188, .8) !important; }
-#mmb_map_pannel .map-inner .pin.other	{ background: rgba(18, 108, 138, .8); }
-#mmb_map_pannel .map-inner .pin span	{ display: block; position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); font-size: 11px; text-align: center; }
+#mmb_map_pannel .map-inner .pin			{ display: block; position: absolute; background: gray; cursor: pointer; border-radius: 50%;}
+#mmb_map_pannel .map-inner .my		{ background: rgba(172, 34, 188, .8) !important; cursor: auto!important;}
+#mmb_map_pannel .map-inner .other	{ background: rgba(18, 108, 138, .8); }
+#mmb_map_pannel .map-inner .none	{ opacity: .5; cursor: auto!important;}
+#mmb_map_pannel .map-inner .pin span	      { display: block; position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); font-size: 11px; text-align: center; }
+#mmb_map_pannel .map-inner .pin	.map_name		{ position: absolute; bottom: -80%; width: max-content; left: 50%; transform: translateX(-50%); font-weight: bolder; color: black; text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px  1px 0 white, 1px  1px 0 white; /* 테두리 효과 */}
 
 @media all and (max-width: 640px) {
 	#mmb_map_pannel							{ position: inherit; box-sizing: border-box;
@@ -79,3 +101,13 @@ $map_h = 200;		// 지도 원본 세로 사이즈 크기
 }
 
 </style>
+
+<script>
+  const submit_this = (map_id) => {
+    btn_submit = document.querySelector("#btn_submit")
+    re_ma_id = document.querySelector("#re_ma_id")
+    re_ma_id.value = map_id
+
+    btn_submit.click()
+  }
+</script>
